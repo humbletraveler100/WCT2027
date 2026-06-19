@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volunteer — World Cultural Tour Portland 2027</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap');
+
+  :root{
+    --deep-teal:#0D2B36;
+    --mid-teal:#055368;
+    --teal-bright:#0B7A93;
+    --sand:#FCD9B8;
+    --sand-deep:#F0C498;
+    --cream:#FBF8F3;
+    --ink:#10262E;
+    --line:#D9CDB8;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Plus Jakarta Sans', sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    line-height:1.5;
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important; transition-duration:0.01ms !important;}
+  }
+
+  h1,h2,h3{font-family:'Fraunces', serif; letter-spacing:-0.01em;}
+
+  a{color:inherit;}
+
+  .mono{font-family:'DM Mono', monospace; letter-spacing:0.02em;}
+
+  /* ===== NAV ===== */
+
+  /* ===== HERO ===== */
+  .hero{
+    background:linear-gradient(165deg, var(--deep-teal) 0%, var(--mid-teal) 65%, var(--teal-bright) 100%);
+    color:#fff;
+    padding:90px 28px 110px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute; right:-120px; top:-120px;
+    width:420px; height:420px; border-radius:50%;
+    background:radial-gradient(circle, rgba(252,217,184,0.22) 0%, rgba(252,217,184,0) 70%);
+  }
+  .hero-inner{max-width:1120px; margin:0 auto; position:relative; z-index:2;}
+  .eyebrow{
+    font-family:'DM Mono',monospace; text-transform:uppercase; letter-spacing:0.12em;
+    font-size:0.78rem; color:var(--sand); margin-bottom:22px; display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow::before{content:""; width:28px; height:1px; background:var(--sand); display:inline-block;}
+  .hero h1{
+    font-size:clamp(2.4rem, 5vw, 4.1rem);
+    font-weight:600; line-height:1.06; max-width:780px;
+    margin-bottom:26px;
+  }
+  .hero h1 em{color:var(--sand); font-style:normal;}
+  .hero p.lead{
+    font-size:1.18rem; max-width:600px; color:rgba(255,255,255,0.88); margin-bottom:40px; font-weight:400;
+  }
+  .hero-actions{display:flex; gap:16px; flex-wrap:wrap; margin-bottom:54px;}
+  .btn-primary{
+    background:var(--sand); color:var(--deep-teal); font-weight:700; padding:15px 30px;
+    border-radius:3px; text-decoration:none; font-size:1rem; display:inline-block;
+    transition:transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .btn-primary:hover{transform:translateY(-2px); box-shadow:0 10px 24px rgba(0,0,0,0.22);}
+  .btn-ghost{
+    border:1.5px solid rgba(255,255,255,0.5); color:#fff; font-weight:600; padding:14px 28px;
+    border-radius:3px; text-decoration:none; font-size:1rem; display:inline-block;
+    transition:background 0.15s ease, border-color 0.15s ease;
+  }
+  .btn-ghost:hover{background:rgba(255,255,255,0.1); border-color:#fff;}
+
+  .hero-stats{
+    display:flex; gap:0; flex-wrap:wrap;
+    border-top:1px solid rgba(255,255,255,0.18); padding-top:28px;
+  }
+  .hero-stat{padding-right:42px; margin-right:42px; border-right:1px solid rgba(255,255,255,0.18);}
+  .hero-stat:last-child{border-right:none;}
+  .hero-stat .num{font-family:'Fraunces',serif; font-size:2rem; font-weight:600; color:var(--sand); display:block;}
+  .hero-stat .lbl{font-size:0.8rem; color:rgba(255,255,255,0.7); margin-top:2px;}
+
+  /* ===== TIMELINE BAND ===== */
+  .timeline-section{padding:80px 28px 60px; max-width:1120px; margin:0 auto;}
+  .section-head{margin-bottom:48px; max-width:680px;}
+  .section-tag{font-family:'DM Mono',monospace; font-size:0.78rem; color:var(--mid-teal); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:12px; display:block;}
+  .section-head h2{font-size:clamp(1.7rem,3vw,2.4rem); color:var(--deep-teal); font-weight:600; line-height:1.15;}
+  .section-head p{margin-top:14px; color:#4A5A5E; font-size:1.05rem; max-width:560px;}
+
+  .timeline{
+    position:relative;
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:0;
+    border-top:2px solid var(--line);
+    border-bottom:2px solid var(--line);
+  }
+  .tl-stop{
+    padding:32px 28px; position:relative; border-right:1px solid var(--line);
+  }
+  .tl-stop:last-child{border-right:none;}
+  .tl-stop.active{background:var(--sand);}
+  .tl-date{font-family:'DM Mono',monospace; font-size:0.85rem; color:var(--mid-teal); font-weight:500; margin-bottom:10px; display:block;}
+  .tl-stop.active .tl-date{color:var(--deep-teal);}
+  .tl-stop h3{font-size:1.25rem; color:var(--deep-teal); margin-bottom:8px; font-weight:600;}
+  .tl-stop p{font-size:0.94rem; color:#4A5A5E;}
+  .tl-stop.active p{color:#3A2E20;}
+  .tl-dot{
+    position:absolute; top:-2px; left:28px; width:9px; height:9px; border-radius:50%;
+    background:var(--mid-teal); transform:translateY(-50%);
+  }
+  .tl-stop.active .tl-dot{background:var(--deep-teal);}
+
+  @media (max-width:760px){
+    .timeline{grid-template-columns:1fr;}
+    .tl-stop{border-right:none; border-bottom:1px solid var(--line);}
+    .tl-stop:last-child{border-bottom:none;}
+  }
+
+  /* ===== TIERS ===== */
+  .tiers-section{background:var(--deep-teal); padding:90px 28px; color:#fff;}
+  .tiers-inner{max-width:1120px; margin:0 auto;}
+  .tiers-section .section-tag{color:var(--sand);}
+  .tiers-section .section-head h2{color:#fff;}
+  .tiers-section .section-head p{color:rgba(255,255,255,0.75);}
+
+  .tier-grid{display:grid; grid-template-columns:1fr 1fr; gap:28px; margin-top:20px;}
+  @media (max-width:760px){.tier-grid{grid-template-columns:1fr;}}
+
+  .tier-card{
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.14);
+    border-radius:6px;
+    padding:36px 32px;
+    position:relative;
+  }
+  .tier-card.lead{border-color:var(--sand);}
+  .tier-badge{
+    font-family:'DM Mono',monospace; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.08em;
+    padding:5px 12px; border-radius:20px; display:inline-block; margin-bottom:20px;
+  }
+  .tier-card.lead .tier-badge{background:var(--sand); color:var(--deep-teal);}
+  .tier-card.general .tier-badge{background:rgba(255,255,255,0.12); color:#fff;}
+  .tier-card h3{font-size:1.55rem; font-weight:600; margin-bottom:12px;}
+  .tier-card .tier-desc{color:rgba(255,255,255,0.78); margin-bottom:24px; font-size:1rem;}
+  .tier-meta{display:flex; gap:28px; margin-bottom:26px; flex-wrap:wrap;}
+  .tier-meta-item .tm-label{font-size:0.72rem; color:rgba(255,255,255,0.5); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:4px;}
+  .tier-meta-item .tm-value{font-size:0.95rem; font-weight:600; color:var(--sand);}
+  .tier-card.general .tm-value{color:#fff;}
+  .tier-roles{list-style:none; margin-bottom:28px;}
+  .tier-roles li{
+    padding:10px 0; border-top:1px solid rgba(255,255,255,0.1); font-size:0.95rem; color:rgba(255,255,255,0.9);
+    display:flex; align-items:baseline; gap:10px;
+  }
+  .tier-roles li::before{content:"—"; color:var(--sand); flex-shrink:0;}
+  .tier-card.general .tier-roles li::before{color:rgba(255,255,255,0.4);}
+
+  .tier-cta{
+    display:inline-block; width:100%; text-align:center;
+    padding:14px 0; border-radius:3px; text-decoration:none; font-weight:700; font-size:0.95rem;
+    transition:transform 0.15s ease;
+  }
+  .tier-card.lead .tier-cta{background:var(--sand); color:var(--deep-teal);}
+  .tier-card.general .tier-cta{background:transparent; border:1.5px solid rgba(255,255,255,0.4); color:#fff;}
+  .tier-cta:hover{transform:translateY(-2px);}
+
+  /* ===== WHY VOLUNTEER ===== */
+  .why-section{padding:90px 28px; max-width:1120px; margin:0 auto;}
+  .why-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:36px; margin-top:48px;}
+  @media (max-width:760px){.why-grid{grid-template-columns:1fr;}}
+  .why-card{padding-top:24px; border-top:2px solid var(--sand-deep);}
+  .why-card .why-num{font-family:'DM Mono',monospace; color:var(--mid-teal); font-size:0.85rem; margin-bottom:14px; display:block;}
+  .why-card h3{font-size:1.3rem; color:var(--deep-teal); margin-bottom:10px; font-weight:600;}
+  .why-card p{color:#4A5A5E; font-size:0.97rem;}
+
+  /* ===== INTEREST FORM ===== */
+  .form-section{background:var(--sand); padding:90px 28px;}
+  .form-inner{max-width:760px; margin:0 auto; text-align:center;}
+  .form-inner .section-tag{color:var(--mid-teal); justify-self:center;}
+  .form-inner h2{font-size:clamp(1.8rem,3.4vw,2.6rem); color:var(--deep-teal); margin-bottom:16px; font-weight:600;}
+  .form-inner p.lead{color:#5C4A33; font-size:1.05rem; margin-bottom:40px; max-width:540px; margin-left:auto; margin-right:auto;}
+
+  .signup-form{
+    background:#fff; border-radius:8px; padding:40px;
+    box-shadow:0 18px 50px rgba(13,43,54,0.14);
+    text-align:left;
+  }
+  .form-row{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-bottom:18px;}
+  @media (max-width:560px){.form-row{grid-template-columns:1fr;}}
+  .form-field label{display:block; font-size:0.82rem; font-weight:600; color:var(--deep-teal); margin-bottom:6px;}
+  .form-field input, .form-field select{
+    width:100%; padding:12px 14px; border:1.5px solid #DDD6C9; border-radius:4px;
+    font-family:'Plus Jakarta Sans',sans-serif; font-size:0.95rem; color:var(--ink); background:#FBFAF7;
+  }
+  .form-field input:focus, .form-field select:focus{outline:2px solid var(--mid-teal); outline-offset:1px; border-color:var(--mid-teal);}
+  .interest-choice{margin-bottom:24px;}
+  .interest-choice > label{display:block; font-size:0.82rem; font-weight:600; color:var(--deep-teal); margin-bottom:10px;}
+  .radio-options{display:flex; gap:14px; flex-wrap:wrap;}
+  .radio-option{
+    border:1.5px solid #DDD6C9; border-radius:4px; padding:12px 18px; cursor:pointer; flex:1; min-width:160px;
+    display:flex; align-items:center; gap:10px; font-size:0.92rem; transition:border-color 0.15s ease;
+  }
+  .radio-option:hover{border-color:var(--mid-teal);}
+  .radio-option input{accent-color:var(--mid-teal); width:16px; height:16px;}
+  .submit-btn{
+    width:100%; background:var(--deep-teal); color:#fff; font-weight:700; padding:16px 0;
+    border:none; border-radius:4px; font-size:1rem; cursor:pointer; font-family:'Plus Jakarta Sans',sans-serif;
+    transition:background 0.15s ease;
+  }
+  .submit-btn:hover{background:var(--mid-teal);}
+  .form-note{font-size:0.82rem; color:#8A7A60; margin-top:16px; text-align:center;}
+
+  /* ===== FOOTER ===== */
+  footer{background:var(--deep-teal); color:rgba(255,255,255,0.7); padding:48px 28px 36px;}
+  .footer-inner{max-width:1120px; margin:0 auto; display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:24px;}
+  .footer-inner .org{color:var(--sand); font-family:'Fraunces',serif; font-weight:600; font-size:1.1rem; margin-bottom:8px;}
+  .footer-meta{font-size:0.85rem; line-height:1.7;}
+  .footer-right{font-size:0.8rem; text-align:right;}
+
+</style>
+  <link rel="stylesheet" href="nav.css">
+</head>
+<body>
+
+<nav id="wct-nav">
+  <div class="wct-nav-inner">
+    <a href="index.html" class="wct-nav-logo">
+      <span class="wct-logo-main">World Cultural Tour 2027</span>
+      <span class="wct-logo-sub">The Humble Travelers Foundation &middot; Portland</span>
+    </a>
+    <ul class="wct-nav-links">
+      <li><a href="index.html" >Event</a></li>
+      <li><a href="get-involved.html" >Get Involved</a></li>
+      <li><a href="donate.html" >Give &amp; Sponsor</a></li>
+      <li><a href="partners.html" >Cultural Partners</a></li>
+      <li><a href="volunteer.html" class="wct-active">Volunteer</a></li>
+      <li><a href="vendors.html" >Vendors</a></li>
+    </ul>
+    <a href="get-involved.html" class="wct-nav-cta">Get Involved</a>
+    <button class="wct-hamburger" aria-label="Toggle menu" onclick="document.getElementById('wct-nav').classList.toggle('wct-nav-open')">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <ul class="wct-mobile-menu">
+    <li><a href="index.html" >Event</a></li>
+    <li><a href="get-involved.html" >Get Involved</a></li>
+    <li><a href="donate.html" >Give &amp; Sponsor</a></li>
+    <li><a href="partners.html" >Cultural Partners</a></li>
+    <li><a href="volunteer.html" class="wct-active">Volunteer</a></li>
+    <li><a href="vendors.html" >Vendors</a></li>
+    <li><a href="get-involved.html" class="wct-mobile-cta">Get Involved</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">Volunteer Program · Cathedral Park, Portland</span>
+    <h1>Three days, fifteen cultures, <em>one team</em> making it happen.</h1>
+    <p class="lead">The World Cultural Tour 2027 runs on volunteers — from the people who plan it for months to the people who show up for a single shift in September. There's a role built for however much time you have to give.</p>
+    <div class="hero-actions">
+      <a href="#signup" class="btn-primary">Add Me to the Interest List</a>
+      <a href="#roles" class="btn-ghost">See Volunteer Roles</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><span class="num">3</span><span class="lbl">Festival days</span></div>
+      <div class="hero-stat"><span class="num">15–25</span><span class="lbl">Cultural partners</span></div>
+      <div class="hero-stat"><span class="num">300–500</span><span class="lbl">Students, Field Trip Day</span></div>
+      <div class="hero-stat"><span class="num">2</span><span class="lbl">Volunteer tiers</span></div>
+    </div>
+  </div>
+</header>
+
+<section class="timeline-section">
+  <div class="section-head">
+    <span class="section-tag">How Sign-Ups Work</span>
+    <h2>You can join the list today. Official sign-up opens in April.</h2>
+    <p>We're building our early interest list now so we can reach out the moment roles open — no commitment required until you say so.</p>
+  </div>
+  <div class="timeline">
+    <div class="tl-stop active">
+      <div class="tl-dot"></div>
+      <span class="tl-date">Now</span>
+      <h3>Early Interest List</h3>
+      <p>Tell us what you're interested in. We'll email you the moment official sign-ups open — first.</p>
+    </div>
+    <div class="tl-stop">
+      <div class="tl-dot"></div>
+      <span class="tl-date">April 2027</span>
+      <h3>Official Sign-Ups Open</h3>
+      <p>Team Lead applications open first. General Volunteer shift sign-ups follow shortly after.</p>
+    </div>
+    <div class="tl-stop">
+      <div class="tl-dot"></div>
+      <span class="tl-date">September 2027</span>
+      <h3>Event Week</h3>
+      <p>Three days at Cathedral Park, including a Field Trip Day serving up to 500 Portland students.</p>
+    </div>
+  </div>
+</section>
+
+<section class="tiers-section" id="roles">
+  <div class="tiers-inner">
+    <div class="section-head">
+      <span class="section-tag">Two Ways to Get Involved</span>
+      <h2>Pick the level of commitment that fits your life right now.</h2>
+      <p>Both tiers are essential. Team Leads shape how the event runs; General Volunteers are who attendees actually meet.</p>
+    </div>
+
+    <div class="tier-grid">
+      <div class="tier-card lead">
+        <span class="tier-badge">Tier 1</span>
+        <h3>Team Lead</h3>
+        <p class="tier-desc">For reliable, regular volunteers who want to own a piece of the event from planning through execution.</p>
+        <div class="tier-meta">
+          <div class="tier-meta-item"><div class="tm-label">Commitment</div><div class="tm-value">April – Sept 2027</div></div>
+          <div class="tier-meta-item"><div class="tm-label">Time Ask</div><div class="tm-value">4–6 hrs / week</div></div>
+        </div>
+        <ul class="tier-roles">
+          <li>Cultural Partner Liaison Lead</li>
+          <li>Field Trip Day Lead</li>
+          <li>Volunteer Coordination Lead</li>
+          <li>Sponsorship & Fundraising Lead</li>
+          <li>Site Operations Lead</li>
+        </ul>
+        <a href="#signup" class="tier-cta">Apply for a Team Lead Role</a>
+      </div>
+
+      <div class="tier-card general">
+        <span class="tier-badge">Tier 2</span>
+        <h3>General Volunteer</h3>
+        <p class="tier-desc">For anyone who wants to show up, lend a hand, and be part of the festival — single shifts welcome.</p>
+        <div class="tier-meta">
+          <div class="tier-meta-item"><div class="tm-label">Commitment</div><div class="tm-value">July – Sept 2027</div></div>
+          <div class="tier-meta-item"><div class="tm-label">Time Ask</div><div class="tm-value">One 3–4 hr shift</div></div>
+        </div>
+        <ul class="tier-roles">
+          <li>Welcome & Information Booth</li>
+          <li>Cultural Partner Booth Support</li>
+          <li>Field Trip Day Student Escort</li>
+          <li>Setup & Teardown Crew</li>
+          <li>Hospitality & Donation Table Support</li>
+        </ul>
+        <a href="#signup" class="tier-cta">Sign Up for a Shift</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why-section">
+  <div class="section-head">
+    <span class="section-tag">Why It Matters</span>
+    <h2>This event only works because volunteers make it work.</h2>
+  </div>
+  <div class="why-grid">
+    <div class="why-card">
+      <span class="why-num">01</span>
+      <h3>Free, because of you</h3>
+      <p>WCT 2027 is free for every attendee. Volunteer labor is what makes that possible — there's no ticket revenue covering the gap.</p>
+    </div>
+    <div class="why-card">
+      <span class="why-num">02</span>
+      <h3>500 students, one day</h3>
+      <p>Field Trip Day brings hundreds of Portland students to experience 15–25 cultures in a single afternoon. It runs entirely on volunteer escorts and coordinators.</p>
+    </div>
+    <div class="why-card">
+      <span class="why-num">03</span>
+      <h3>A team that grows together</h3>
+      <p>Many of our Team Leads started as single-shift General Volunteers the year before. There's room to grow into more responsibility over time.</p>
+    </div>
+  </div>
+</section>
+
+<section class="form-section" id="signup">
+  <div class="form-inner">
+    <span class="section-tag">Join the List</span>
+    <h2>Be first in line when sign-ups open in April.</h2>
+    <p class="lead">No commitment, no spam — just an early heads-up and the ability to claim your preferred role before shifts fill up.</p>
+
+    <form class="signup-form" onsubmit="event.preventDefault(); this.querySelector('.submit-btn').textContent='You\'re on the list! 🎉';">
+      <div class="form-row">
+        <div class="form-field">
+          <label for="fname">First name</label>
+          <input type="text" id="fname" required>
+        </div>
+        <div class="form-field">
+          <label for="lname">Last name</label>
+          <input type="text" id="lname" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-field">
+          <label for="email">Email</label>
+          <input type="email" id="email" required>
+        </div>
+        <div class="form-field">
+          <label for="phone">Phone (optional)</label>
+          <input type="tel" id="phone">
+        </div>
+      </div>
+
+      <div class="interest-choice">
+        <label>Which tier are you interested in?</label>
+        <div class="radio-options">
+          <label class="radio-option"><input type="radio" name="tier" value="lead" checked> Team Lead</label>
+          <label class="radio-option"><input type="radio" name="tier" value="general"> General Volunteer</label>
+          <label class="radio-option"><input type="radio" name="tier" value="unsure"> Not sure yet</label>
+        </div>
+      </div>
+
+      <div class="form-field" style="margin-bottom:24px;">
+        <label for="role">Role you're most interested in (optional)</label>
+        <select id="role">
+          <option value="">Select a role</option>
+          <option>Cultural Partner Liaison Lead</option>
+          <option>Field Trip Day Lead</option>
+          <option>Volunteer Coordination Lead</option>
+          <option>Sponsorship & Fu
