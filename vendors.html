@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vendor Sign-Ups — World Cultural Tour Portland 2027</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap');
+
+  :root{
+    --deep-teal:#0D2B36;
+    --mid-teal:#055368;
+    --teal-bright:#0B7A93;
+    --slate:#AECBDA;
+    --slate-deep:#7FA8BD;
+    --cream:#FBF8F3;
+    --ink:#10262E;
+    --line:#D9CDB8;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Plus Jakarta Sans', sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    line-height:1.5;
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important; transition-duration:0.01ms !important;}
+  }
+
+  h1,h2,h3{font-family:'Fraunces', serif; letter-spacing:-0.01em;}
+  a{color:inherit;}
+  .mono{font-family:'DM Mono', monospace; letter-spacing:0.02em;}
+
+  /* ===== NAV ===== */
+
+  /* ===== HERO ===== */
+  .hero{
+    background:linear-gradient(165deg, var(--deep-teal) 0%, var(--mid-teal) 65%, var(--teal-bright) 100%);
+    color:#fff;
+    padding:90px 28px 110px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute; right:-120px; top:-120px;
+    width:420px; height:420px; border-radius:50%;
+    background:radial-gradient(circle, rgba(174,203,218,0.24) 0%, rgba(174,203,218,0) 70%);
+  }
+  .hero-inner{max-width:1120px; margin:0 auto; position:relative; z-index:2;}
+  .eyebrow{
+    font-family:'DM Mono',monospace; text-transform:uppercase; letter-spacing:0.12em;
+    font-size:0.78rem; color:var(--slate); margin-bottom:22px; display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow::before{content:""; width:28px; height:1px; background:var(--slate); display:inline-block;}
+  .hero h1{
+    font-size:clamp(2.4rem, 5vw, 4.1rem);
+    font-weight:600; line-height:1.06; max-width:780px;
+    margin-bottom:26px;
+  }
+  .hero h1 em{color:var(--slate); font-style:normal;}
+  .hero p.lead{
+    font-size:1.18rem; max-width:600px; color:rgba(255,255,255,0.88); margin-bottom:40px; font-weight:400;
+  }
+  .hero-actions{display:flex; gap:16px; flex-wrap:wrap; margin-bottom:54px;}
+  .btn-primary{
+    background:var(--slate); color:var(--deep-teal); font-weight:700; padding:15px 30px;
+    border-radius:3px; text-decoration:none; font-size:1rem; display:inline-block;
+    transition:transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .btn-primary:hover{transform:translateY(-2px); box-shadow:0 10px 24px rgba(0,0,0,0.22);}
+  .btn-ghost{
+    border:1.5px solid rgba(255,255,255,0.5); color:#fff; font-weight:600; padding:14px 28px;
+    border-radius:3px; text-decoration:none; font-size:1rem; display:inline-block;
+    transition:background 0.15s ease, border-color 0.15s ease;
+  }
+  .btn-ghost:hover{background:rgba(255,255,255,0.1); border-color:#fff;}
+
+  .hero-stats{
+    display:flex; gap:0; flex-wrap:wrap;
+    border-top:1px solid rgba(255,255,255,0.18); padding-top:28px;
+  }
+  .hero-stat{padding-right:42px; margin-right:42px; border-right:1px solid rgba(255,255,255,0.18);}
+  .hero-stat:last-child{border-right:none;}
+  .hero-stat .num{font-family:'Fraunces',serif; font-size:2rem; font-weight:600; color:var(--slate); display:block;}
+  .hero-stat .lbl{font-size:0.8rem; color:rgba(255,255,255,0.7); margin-top:2px;}
+
+  /* ===== TIMELINE BAND ===== */
+  .timeline-section{padding:80px 28px 60px; max-width:1120px; margin:0 auto;}
+  .section-head{margin-bottom:48px; max-width:680px;}
+  .section-tag{font-family:'DM Mono',monospace; font-size:0.78rem; color:var(--mid-teal); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:12px; display:block;}
+  .section-head h2{font-size:clamp(1.7rem,3vw,2.4rem); color:var(--deep-teal); font-weight:600; line-height:1.15;}
+  .section-head p{margin-top:14px; color:#4A5A5E; font-size:1.05rem; max-width:560px;}
+
+  .timeline{
+    position:relative;
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:0;
+    border-top:2px solid var(--line);
+    border-bottom:2px solid var(--line);
+  }
+  .tl-stop{
+    padding:32px 28px; position:relative; border-right:1px solid var(--line);
+  }
+  .tl-stop:last-child{border-right:none;}
+  .tl-stop.active{background:var(--slate);}
+  .tl-date{font-family:'DM Mono',monospace; font-size:0.85rem; color:var(--mid-teal); font-weight:500; margin-bottom:10px; display:block;}
+  .tl-stop.active .tl-date{color:var(--deep-teal);}
+  .tl-stop h3{font-size:1.25rem; color:var(--deep-teal); margin-bottom:8px; font-weight:600;}
+  .tl-stop p{font-size:0.94rem; color:#4A5A5E;}
+  .tl-stop.active p{color:#1A2E36;}
+  .tl-dot{
+    position:absolute; top:-2px; left:28px; width:9px; height:9px; border-radius:50%;
+    background:var(--mid-teal); transform:translateY(-50%);
+  }
+  .tl-stop.active .tl-dot{background:var(--deep-teal);}
+
+  @media (max-width:760px){
+    .timeline{grid-template-columns:1fr;}
+    .tl-stop{border-right:none; border-bottom:1px solid var(--line);}
+    .tl-stop:last-child{border-bottom:none;}
+  }
+
+  /* ===== FEE TABLE SECTION ===== */
+  .fee-section{background:var(--deep-teal); padding:90px 28px; color:#fff;}
+  .fee-inner{max-width:1120px; margin:0 auto;}
+  .fee-section .section-tag{color:var(--slate);}
+  .fee-section .section-head h2{color:#fff;}
+  .fee-section .section-head p{color:rgba(255,255,255,0.75);}
+
+  .fee-table-wrap{
+    background:rgba(255,255,255,0.04);
+    border:1px solid var(--slate);
+    border-radius:8px;
+    overflow:hidden;
+    margin-top:24px;
+  }
+  table.vfee{width:100%; border-collapse:collapse;}
+  table.vfee th{
+    text-align:left; padding:18px 24px; font-family:'DM Mono',monospace; font-size:0.78rem;
+    text-transform:uppercase; letter-spacing:0.06em; color:rgba(255,255,255,0.6);
+    border-bottom:1px solid rgba(255,255,255,0.14);
+  }
+  table.vfee td{
+    padding:22px 24px; border-bottom:1px solid rgba(255,255,255,0.1); font-size:1rem; vertical-align:top;
+  }
+  table.vfee tr:last-child td{border-bottom:none;}
+  table.vfee td.vtype{font-weight:700; font-size:1.1rem; font-family:'Fraunces',serif;}
+  table.vfee td.vamount{font-family:'DM Mono',monospace; font-size:1.4rem; font-weight:500; color:var(--slate); white-space:nowrap;}
+  table.vfee td.vincl{color:rgba(255,255,255,0.78); font-size:0.94rem; max-width:340px;}
+
+  .two-col{display:grid; grid-template-columns:1fr 1fr; gap:28px; margin-top:36px;}
+  @media (max-width:760px){.two-col{grid-template-columns:1fr;} table.vfee td, table.vfee th{padding:14px 16px;}}
+  .info-card{
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.14);
+    border-radius:6px;
+    padding:32px 30px;
+  }
+  .info-card .ic-badge{
+    font-family:'DM Mono',monospace; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.08em;
+    padding:5px 12px; border-radius:20px; display:inline-block; margin-bottom:18px;
+    background:rgba(255,255,255,0.12); color:#fff;
+  }
+  .info-card h3{font-size:1.35rem; font-weight:600; margin-bottom:16px;}
+  .info-card ul{list-style:none;}
+  .info-card li{
+    padding:10px 0; border-top:1px solid rgba(255,255,255,0.1); font-size:0.95rem; color:rgba(255,255,255,0.9);
+    display:flex; align-items:baseline; gap:10px;
+  }
+  .info-card li:first-of-type{border-top:none;}
+  .info-card li::before{content:"—"; color:var(--slate); flex-shrink:0;}
+
+  /* ===== HOW IT WORKS ===== */
+  .how-section{padding:90px 28px; max-width:1120px; margin:0 auto;}
+  .how-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:28px; margin-top:48px;}
+  @media (max-width:900px){.how-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:560px){.how-grid{grid-template-columns:1fr;}}
+  .how-card{padding-top:22px; border-top:2px solid var(--slate-deep);}
+  .how-card .how-num{font-family:'DM Mono',monospace; color:var(--mid-teal); font-size:0.85rem; margin-bottom:12px; display:block;}
+  .how-card h3{font-size:1.15rem; color:var(--deep-teal); margin-bottom:8px; font-weight:600;}
+  .how-card p{color:#4A5A5E; font-size:0.92rem;}
+
+  /* ===== WHY SECTION ===== */
+  .why-section{background:#F2EEE3; padding:90px 28px;}
+  .why-inner{max-width:1120px; margin:0 auto;}
+  .why-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:36px; margin-top:48px;}
+  @media (max-width:760px){.why-grid{grid-template-columns:1fr;}}
+  .why-card h3{font-size:1.3rem; color:var(--deep-teal); margin-bottom:10px; font-weight:600;}
+  .why-card p{color:#4A5A5E; font-size:0.97rem;}
+
+  /* ===== INTEREST FORM ===== */
+  .form-section{background:var(--slate); padding:90px 28px;}
+  .form-inner{max-width:760px; margin:0 auto; text-align:center;}
+  .form-inner .section-tag{color:var(--mid-teal); justify-self:center;}
+  .form-inner h2{font-size:clamp(1.8rem,3.4vw,2.6rem); color:var(--deep-teal); margin-bottom:16px; font-weight:600;}
+  .form-inner p.lead{color:#1A3340; font-size:1.05rem; margin-bottom:40px; max-width:540px; margin-left:auto; margin-right:auto;}
+
+  .signup-form{
+    background:#fff; border-radius:8px; padding:40px;
+    box-shadow:0 18px 50px rgba(13,43,54,0.14);
+    text-align:left;
+  }
+  .form-row{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-bottom:18px;}
+  @media (max-width:560px){.form-row{grid-template-columns:1fr;}}
+  .form-field label{display:block; font-size:0.82rem; font-weight:600; color:var(--deep-teal); margin-bottom:6px;}
+  .form-field input, .form-field select, .form-field textarea{
+    width:100%; padding:12px 14px; border:1.5px solid #DDD6C9; border-radius:4px;
+    font-family:'Plus Jakarta Sans',sans-serif; font-size:0.95rem; color:var(--ink); background:#FBFAF7;
+  }
+  .form-field textarea{resize:vertical; min-height:80px;}
+  .form-field input:focus, .form-field select:focus, .form-field textarea:focus{outline:2px solid var(--mid-teal); outline-offset:1px; border-color:var(--mid-teal);}
+  .interest-choice{margin-bottom:24px;}
+  .interest-choice > label{display:block; font-size:0.82rem; font-weight:600; color:var(--deep-teal); margin-bottom:10px;}
+  .radio-options{display:flex; gap:14px; flex-wrap:wrap;}
+  .radio-option{
+    border:1.5px solid #DDD6C9; border-radius:4px; padding:12px 18px; cursor:pointer; flex:1; min-width:160px;
+    display:flex; align-items:center; gap:10px; font-size:0.92rem; transition:border-color 0.15s ease;
+  }
+  .radio-option:hover{border-color:var(--mid-teal);}
+  .radio-option input{accent-color:var(--mid-teal); width:16px; height:16px;}
+  .radio-option .ro-fee{font-family:'DM Mono',monospace; font-size:0.82rem; color:var(--mid-teal); margin-left:auto; font-weight:600;}
+  .checkbox-list{display:flex; flex-direction:column; gap:10px; margin-bottom:24px;}
+  .checkbox-item{display:flex; align-items:flex-start; gap:10px; font-size:0.92rem; color:var(--ink);}
+  .checkbox-item input{accent-color:var(--mid-teal); width:16px; height:16px; margin-top:2px; flex-shrink:0;}
+  .submit-btn{
+    width:100%; background:var(--deep-teal); color:#fff; font-weight:700; padding:16px 0;
+    border:none; border-radius:4px; font-size:1rem; cursor:pointer; font-family:'Plus Jakarta Sans',sans-serif;
+    transition:background 0.15s ease;
+  }
+  .submit-btn:hover{background:var(--mid-teal);}
+  .form-note{font-size:0.82rem; color:#3E5468; margin-top:16px; text-align:center;}
+
+  /* ===== FOOTER ===== */
+  footer{background:var(--deep-teal); color:rgba(255,255,255,0.7); padding:48px 28px 36px;}
+  .footer-inner{max-width:1120px; margin:0 auto; display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:24px;}
+  .footer-inner .org{color:var(--slate); font-family:'Fraunces',serif; font-weight:600; font-size:1.1rem; margin-bottom:8px;}
+  .footer-meta{font-size:0.85rem; line-height:1.7;}
+  .footer-right{font-size:0.8rem; text-align:right;}
+
+</style>
+  <link rel="stylesheet" href="nav.css">
+</head>
+<body>
+
+<nav id="wct-nav">
+  <div class="wct-nav-inner">
+    <a href="index.html" class="wct-nav-logo">
+      <span class="wct-logo-main">World Cultural Tour 2027</span>
+      <span class="wct-logo-sub">The Humble Travelers Foundation &middot; Portland</span>
+    </a>
+    <ul class="wct-nav-links">
+      <li><a href="index.html" >Event</a></li>
+      <li><a href="get-involved.html" >Get Involved</a></li>
+      <li><a href="donate.html" >Give &amp; Sponsor</a></li>
+      <li><a href="partners.html" >Cultural Partners</a></li>
+      <li><a href="volunteer.html" >Volunteer</a></li>
+      <li><a href="vendors.html" class="wct-active">Vendors</a></li>
+    </ul>
+    <a href="get-involved.html" class="wct-nav-cta">Get Involved</a>
+    <button class="wct-hamburger" aria-label="Toggle menu" onclick="document.getElementById('wct-nav').classList.toggle('wct-nav-open')">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <ul class="wct-mobile-menu">
+    <li><a href="index.html" >Event</a></li>
+    <li><a href="get-involved.html" >Get Involved</a></li>
+    <li><a href="donate.html" >Give &amp; Sponsor</a></li>
+    <li><a href="partners.html" >Cultural Partners</a></li>
+    <li><a href="volunteer.html" >Volunteer</a></li>
+    <li><a href="vendors.html" class="wct-active">Vendors</a></li>
+    <li><a href="get-involved.html" class="wct-mobile-cta">Get Involved</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">Vendor Applications · Cathedral Park, Portland</span>
+    <h1>Sell your craft to <em>thousands</em> of festival visitors.</h1>
+    <p class="lead">The World Cultural Tour 2027 welcomes artisan makers and food vendors to a free, three-day festival drawing crowds to Cathedral Park this September. Flat fees, no commission.</p>
+    <div class="hero-actions">
+      <a href="#apply" class="btn-primary">Apply to Vend</a>
+      <a href="#details" class="btn-ghost">See Fees & Requirements</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><span class="num">3</span><span class="lbl">Festival days</span></div>
+      <div class="hero-stat"><span class="num">$150</span><span class="lbl">Artisan & maker fee</span></div>
+      <div class="hero-stat"><span class="num">$225</span><span class="lbl">Food vendor fee</span></div>
+      <div class="hero-stat"><span class="num">0%</span><span class="lbl">Commission on sales</span></div>
+    </div>
+  </div>
+</header>
+
+<section class="timeline-section" id="details">
+  <div class="section-head">
+    <span class="section-tag">How Applications Work</span>
+    <h2>Apply now — vendor spaces are limited and confirmed on a rolling basis.</h2>
+    <p>The sooner you apply, the more likely you are to secure your preferred booth location.</p>
+  </div>
+  <div class="timeline">
+    <div class="tl-stop active">
+      <div class="tl-dot"></div>
+      <span class="tl-date">Now</span>
+      <h3>Applications Open</h3>
+      <p>Submit your application and required documentation. Reviewed on a rolling basis.</p>
+    </div>
+    <div class="tl-stop">
+      <div class="tl-dot"></div>
+      <span class="tl-date">Summer 2027</span>
+      <h3>Confirmation & Fee Due</h3>
+      <p>Approved vendors confirm their spot and submit payment ahead of the event.</p>
+    </div>
+    <div class="tl-stop">
+      <div class="tl-dot"></div>
+      <span class="tl-date">September 2027</span>
+      <h3>Event Week</h3>
+      <p>Three festival days at Cathedral Park, with load-in details sent in advance.</p>
+    </div>
+  </div>
+</section>
+
+<section class="fee-section">
+  <div class="fee-inner">
+    <div class="section-head">
+      <span class="section-tag">Vendor Fee Structure</span>
+      <h2>Flat fees. No commission. Straightforward pricing.</h2>
+      <p>What you earn at your booth is yours to keep — we don't take a percentage of sales.</p>
+    </div>
+
+    <div class="fee-table-wrap">
+      <table class="vfee">
+        <tr>
+          <th>Vendor Type</th>
+          <th>Fee</th>
+          <th>What's Included</th>
+        </tr>
+        <tr>
+          <td class="vtype">Artisan & Maker</td>
+          <td class="vamount">$150</td>
+          <td class="vincl">Booth space, event promotion, and access across all three festival days</td>
+        </tr>
+        <tr>
+          <td class="vtype">Food Vendor</td>
+          <td class="vamount">$225</td>
+          <td class="vincl">Booth space with utility access, event promotion, and access across all three festival days</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="two-col">
+      <div class="info-card">
+        <span class="ic-badge">What We Provide</span>
+        <h3>Vendor Support</h3>
+        <ul>
+          <li>Designated booth space</li>
+          <li>Promotion across HTF channels</li>
+          <li>Access to festival foot traffic for all 3 days</li>
+          <li>On-site volunteer support</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <span class="ic-badge">What We Ask</span>
+        <h3>Vendor Requirements</h3>
+        <ul>
+          <li>Valid business license & insurance</li>
+          <li>Food vendors: current food handler permits</li>
+          <li>Staff your booth for the full event window</li>
+          <li>Submit application & fee before the deadline</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="how-section">
+  <div class="section-head">
+    <span class="section-tag">The Application Process</span>
+    <h2>From application to opening day in four steps.</h2>
+  </div>
+  <div class="how-grid">
+    <div class="how-card">
+      <span class="how-num">Step 1</span>
+      <h3>Submit your application</h3>
+      <p>Tell us about your business, your products, and your space and utility needs.</p>
+    </div>
+    <div class="how-card">
+      <span class="how-num">Step 2</span>
+      <h3>We review & confirm</h3>
+      <p>Applications are reviewed on a rolling basis. We'll follow up within two weeks.</p>
+    </div>
+    <div class="how-card">
+      <span class="how-num">Step 3</span>
+      <h3>Submit fee & documents</h3>
+      <p>Confirmed vendors submit payment along with licenses, permits, and insurance.</p>
+    </div>
+    <div class="how-card">
+      <span class="how-num">Step 4</span>
+      <h3>Load in & sell</h3>
+      <p>We'll send load-in times and booth details in the weeks before the festival.</p>
+    </div>
+  </div>
+</section>
+
+<section class="why-section">
+  <div class="why-inner">
+    <div class="section-head">
+      <span class="section-tag">Why Vend With Us</span>
+      <h2>A free event removes the biggest barrier — and the crowds show up.</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <h3>Built-in crowd</h3>
+        <p>No ticket price means more visitors of every kind, all weekend long.</p>
+      </div>
+      <div class="why-card">
+        <h3>Affordable entry</h3>
+        <p>Flat fees with no commission on sales — what you earn at your booth stays with you.</p>
+      </div>
+      <div class="why-card">
+        <h3>Aligned audience</h3>
+        <p>Festival-goers come specifically to explore culture, craft, and food — your exact customer.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="form-section" id="apply">
+  <div class="form-inner">
+    <span class="section-tag">Apply to Vend</span>
+    <h2>Tell us about your business.</h2>
+    <p class="lead">Spaces are limited and reviewed on a rolling basis — the sooner you apply, the better your odds of your preferred spot.</p>
+
+    <form class="signup-form" onsubmit="event.preventDefault(); this.querySelector('.submit-btn').textContent='Application received! 🎪';">
+      <div class="form-row">
+        <div class="form-field">
+          <label for="business">Business name</label>
+          <input type="text" id="business" required>
+        </div>
+        <div class="form-field">
+          <label for="contact">Contact name</label>
+          <input type="text" id="contact" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-field">
+          <label for="email">Email</label>
+          <input type="email" id="email" required>
+        </div>
+        <div class="form-field">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" required>
+        </div>
+      </div>
+
+      <div class="interest-choice">
+        <label>Vendor type</label>
+        <div class="radio-options">
+          <label class="radio-option"><input type="radio" name="vtype" value="artisan" checked> Artisan & Maker <span class="ro-fee">$150</span></label>
+          <label class="radio-option"><input type="radio" name="vtype" value="food"> Food Vendor <span class="ro-fee">$225</span></label>
+        </div>
+      </div>
+
+      <div class="form-field" style="margin-bottom:24px;">
+        <label for="products">What will you be selling?</label>
+        <input type="text" id="products" placeholder="e.g. handmade jewelry, Ethiopian street food...">
+      </div>
+
+      <div class="form-row">
+        <div class="form-field">
+          <label for="power">Need electrical/power access?</label>
+          <select id="power">
+            <option value="">Select an option</option>
+            <option>Yes</option>
+            <option>No</option>
+            <option>Not sure</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="space">Approximate booth size needed</label>
+          <input type="text" id="space" placeholder="e.g. 10x10 ft">
+        </div>
+      </div>
+
+      <div class="checkbox-list">
+        <label class="checkbox-item"><input type="checkbox" required> I have or will obtain a valid business license</label>
+        <label class="checkbox-item"><input type="checkbox" required> I have liability insurance (or will obtain it before the event)</label>
+        <label class="checkbox-item" id="food-permit-row"><input type="checkbox"> Food vendors only: I have current food handler permits</label>
+      </div>
+
+      <div class="form-field" style="margin-bottom:8px;">
+        <label for="notes">Anything else we should know? (optional)</label>
+        <textarea id="notes" placeholder="Special space needs, accessibility requirements, questions, etc."></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn" style="margin-top:20px;">Submit Application</button>
+      <p class="form-note">We'll follow up by email within two weeks. Fee is due only upon confirmation.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="org">The Humble Travelers Foundation</div>
+      <div class="footer-meta">
+        9715 SE Powell Blvd, Portland, OR 97266<br>
+        info@humbletravelers.org · 503-568-1435
+      </div>
+    </div>
+    <div class="footer-right">
+      501(c)(3) Nonprofit · EIN 39-3828731<br>
+      World Cultural Tour 2027 · Cathedral Park, Portland
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
