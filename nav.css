@@ -1,0 +1,205 @@
+/* ============================================================
+   WCT 2027 — Shared Navigation
+   wct.humbletravelers.org
+   ============================================================ */
+
+:root {
+  --wct-ink:       #0D2B36;
+  --wct-teal:      #055368;
+  --wct-cream:     #FBF8F3;
+  --wct-peach:     #FDE4D8;
+  --wct-mint:      #C9EEDD;
+  --wct-azure:     #C5E3F0;
+  --wct-slate:     #AECBDA;
+  --wct-nav-bg:    rgba(13, 43, 54, 0.96);
+  --wct-nav-h:     62px;
+}
+
+/* ── Reset ── */
+#wct-nav * { box-sizing: border-box; margin: 0; padding: 0; }
+#wct-nav a { text-decoration: none; color: inherit; }
+
+/* ── Outer bar ── */
+#wct-nav {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  width: 100%;
+  background: var(--wct-nav-bg);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* ── Inner wrapper ── */
+.wct-nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: var(--wct-nav-h);
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+/* ── Logo / wordmark ── */
+.wct-nav-logo {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  flex-shrink: 0;
+}
+.wct-nav-logo .wct-logo-main {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #fff;
+  line-height: 1.15;
+  white-space: nowrap;
+}
+.wct-nav-logo .wct-logo-sub {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.5);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+/* ── Link list ── */
+.wct-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  list-style: none;
+}
+
+#wct-nav .wct-nav-links li a {
+  display: block;
+  padding: 7px 11px;
+  border-radius: 4px;
+  font-size: 0.83rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.72) !important;
+  transition: color 0.15s ease, background 0.15s ease;
+  white-space: nowrap;
+}
+#wct-nav .wct-nav-links li a:hover {
+  color: #fff !important;
+  background: rgba(255,255,255,0.07);
+}
+
+/* Active page indicator */
+#wct-nav .wct-nav-links li a.wct-active {
+  color: #fff !important;
+  font-weight: 700;
+  background: rgba(255,255,255,0.1);
+}
+
+/* ── Primary CTA ── */
+.wct-nav-cta {
+  display: inline-block;
+  flex-shrink: 0;
+  padding: 8px 18px;
+  border-radius: 3px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  background: var(--wct-peach);
+  color: var(--wct-ink);
+  transition: transform 0.15s ease, background 0.15s ease;
+  white-space: nowrap;
+}
+.wct-nav-cta:hover {
+  background: #fff;
+  transform: translateY(-1px);
+}
+
+/* ── Hamburger (mobile only) ── */
+.wct-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  z-index: 210;
+}
+.wct-hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: rgba(255,255,255,0.85);
+  border-radius: 2px;
+  transition: transform 0.22s ease, opacity 0.22s ease;
+}
+
+/* ── Mobile drawer ── */
+.wct-mobile-menu {
+  display: none;
+  flex-direction: column;
+  background: var(--wct-ink);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding: 14px 0 18px;
+}
+.wct-mobile-menu li {
+  list-style: none;
+}
+#wct-nav .wct-mobile-menu li a {
+  display: block;
+  padding: 11px 28px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.82) !important;
+  transition: background 0.12s ease, color 0.12s ease;
+}
+#wct-nav .wct-mobile-menu li a:hover,
+#wct-nav .wct-mobile-menu li a.wct-active {
+  background: rgba(255,255,255,0.06);
+  color: #fff !important;
+}
+#wct-nav .wct-mobile-menu li a.wct-active {
+  font-weight: 700;
+  border-left: 3px solid var(--wct-peach);
+  padding-left: 25px;
+}
+#wct-nav .wct-mobile-menu .wct-mobile-cta {
+  margin: 14px 28px 0;
+  text-align: center;
+  padding: 12px 0;
+  border-radius: 3px;
+  font-weight: 700;
+  background: var(--wct-peach);
+  color: var(--wct-ink) !important;
+}
+
+/* Open state */
+#wct-nav.wct-nav-open .wct-mobile-menu {
+  display: flex;
+}
+#wct-nav.wct-nav-open .wct-hamburger span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+#wct-nav.wct-nav-open .wct-hamburger span:nth-child(2) {
+  opacity: 0;
+}
+#wct-nav.wct-nav-open .wct-hamburger span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ── Responsive breakpoint ── */
+@media (max-width: 840px) {
+  .wct-nav-links,
+  .wct-nav-cta {
+    display: none;
+  }
+  .wct-hamburger {
+    display: flex;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #wct-nav * { transition: none !important; }
+}
