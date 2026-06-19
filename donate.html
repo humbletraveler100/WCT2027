@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Give &amp; Sponsor — World Cultural Tour Portland 2027</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap');
+
+  :root{
+    --deep-teal:#0D2B36;
+    --mid-teal:#055368;
+    --teal-bright:#0B7A93;
+    --azure:#C5E3F0;
+    --azure-deep:#8FC4DC;
+    --cream:#FBF8F3;
+    --ink:#10262E;
+    --line:#D9CDB8;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Plus Jakarta Sans', sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    line-height:1.5;
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important; transition-duration:0.01ms !important;}
+  }
+
+  h1,h2,h3{font-family:'Fraunces', serif; letter-spacing:-0.01em;}
+  a{color:inherit; text-decoration:none;}
+  .mono{font-family:'DM Mono', monospace; letter-spacing:0.02em;}
+
+  /* ===== NAV ===== */
+  @media (max-width:680px){}
+
+  /* ===== HERO ===== */
+  .hero{
+    background:linear-gradient(165deg, var(--deep-teal) 0%, var(--mid-teal) 65%, var(--teal-bright) 100%);
+    color:#fff;
+    padding:90px 28px 110px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute; right:-120px; top:-120px;
+    width:420px; height:420px; border-radius:50%;
+    background:radial-gradient(circle, rgba(197,227,240,0.24) 0%, rgba(197,227,240,0) 70%);
+  }
+  .hero-inner{max-width:1120px; margin:0 auto; position:relative; z-index:2;}
+  .eyebrow{
+    font-family:'DM Mono',monospace; text-transform:uppercase; letter-spacing:0.12em;
+    font-size:0.78rem; color:var(--azure); margin-bottom:22px; display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow::before{content:""; width:28px; height:1px; background:var(--azure); display:inline-block;}
+  .hero h1{
+    font-size:clamp(2.4rem, 5vw, 4.1rem);
+    font-weight:600; line-height:1.06; max-width:780px;
+    margin-bottom:26px;
+  }
+  .hero h1 em{color:var(--azure); font-style:normal;}
+  .hero p.lead{
+    font-size:1.18rem; max-width:600px; color:rgba(255,255,255,0.88); margin-bottom:40px; font-weight:400;
+  }
+  .hero-actions{display:flex; gap:16px; flex-wrap:wrap; margin-bottom:54px;}
+  .btn-primary{
+    background:var(--azure); color:var(--deep-teal); font-weight:700; padding:15px 30px;
+    border-radius:3px; text-decoration:none; font-size:1rem; display:inline-block;
+    transition:transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .btn-primary:hover{transform:translateY(-2px); box-shadow:0 10px 24px rgba(0,0,0,0.22);}
+  .btn-ghost{
+    border:1.5px solid rgba(255,255,255,0.5); color:#fff; font-weight:600; padding:14px 28px;
+    border-radius:3px; text-decoration:none; font-size:1rem; display:inline-block;
+    transition:background 0.15s ease, border-color 0.15s ease;
+  }
+  .btn-ghost:hover{background:rgba(255,255,255,0.1); border-color:#fff;}
+
+  .hero-stats{
+    display:flex; gap:0; flex-wrap:wrap;
+    border-top:1px solid rgba(255,255,255,0.18); padding-top:28px;
+  }
+  .hero-stat{padding-right:42px; margin-right:42px; border-right:1px solid rgba(255,255,255,0.18);}
+  .hero-stat:last-child{border-right:none;}
+  .hero-stat .num{font-family:'Fraunces',serif; font-size:2rem; font-weight:600; color:var(--azure); display:block;}
+  .hero-stat .lbl{font-size:0.8rem; color:rgba(255,255,255,0.7); margin-top:2px;}
+
+  /* ===== GOAL PROGRESS BAND ===== */
+  .progress-section{padding:64px 28px 16px; max-width:1120px; margin:0 auto;}
+  .progress-card{
+    background:#fff; border:1px solid var(--line); border-radius:10px; padding:40px 44px;
+    box-shadow:0 10px 30px rgba(13,43,54,0.05);
+  }
+  .progress-top{display:flex; justify-content:space-between; align-items:baseline; margin-bottom:18px; flex-wrap:wrap; gap:12px;}
+  .progress-top .pg-label{font-family:'DM Mono',monospace; font-size:0.78rem; color:var(--mid-teal); text-transform:uppercase; letter-spacing:0.08em;}
+  .progress-top .pg-goal{font-family:'Fraunces',serif; font-size:1.5rem; color:var(--deep-teal); font-weight:600;}
+  .progress-track{height:14px; background:#EFE9DC; border-radius:8px; overflow:hidden; margin-bottom:14px;}
+  .progress-fill{height:100%; background:linear-gradient(90deg, var(--azure-deep), var(--mid-teal)); border-radius:8px;}
+  .progress-note{font-size:0.92rem; color:#5A6B6E;}
+
+  /* ===== TWO PATHS NAV ===== */
+  .paths-
+  @media (max-width:760px){.paths-}
+  .path-link{
+    border:1.5px solid var(--line); border-radius:10px; padding:26px 28px; display:flex; align-items:center; justify-content:space-between; gap:16px;
+    transition:border-color 0.15s ease, transform 0.15s ease; text-decoration:none;
+  }
+  .path-link:hover{border-color:var(--mid-teal); transform:translateY(-2px);}
+  .path-link .pl-text .pl-tag{font-family:'DM Mono',monospace; font-size:0.74rem; color:var(--mid-teal); text-transform:uppercase; letter-spacing:0.06em; display:block; margin-bottom:6px;}
+  .path-link .pl-text h3{font-size:1.2rem; color:var(--deep-teal); font-weight:600;}
+  .path-link svg{width:20px; height:20px; flex-shrink:0; color:var(--deep-teal);}
+
+  /* ===== INDIVIDUAL GIVING ===== */
+  .give-section{padding:80px 28px; max-width:1120px; margin:0 auto;}
+  .section-head{margin-bottom:48px; max-width:680px;}
+  .section-tag{font-family:'DM Mono',monospace; font-size:0.78rem; color:var(--mid-teal); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:12px; display:block;}
+  .section-head h2{font-size:clamp(1.7rem,3vw,2.4rem); color:var(--deep-teal); font-weight:600; line-height:1.15;}
+  .section-head p{margin-top:14px; color:#4A5A5E; font-size:1.05rem; max-width:560px;}
+
+  .give-grid{display:grid; grid-template-columns:repeat(4, 1fr); gap:20px; margin-top:20px;}
+  @media (max-width:900px){.give-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:480px){.give-grid{grid-template-columns:1fr;}}
+
+  .give-card{
+    border:1.5px solid var(--line); border-radius:10px; padding:30px 26px; text-align:left;
+    display:flex; flex-direction:column; transition:transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    background:#fff;
+  }
+  .give-card:hover{transform:translateY(-4px); box-shadow:0 16px 32px rgba(13,43,54,0.1); border-color:var(--azure-deep);}
+  .give-card.featured{background:linear-gradient(165deg, var(--azure) 0%, #fff 85%); border-color:var(--azure-deep);}
+  .give-card .gc-tag{font-family:'DM Mono',monospace; font-size:0.72rem; color:var(--mid-teal); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:14px;}
+  .give-card .gc-amount{font-family:'Fraunces',serif; font-size:2.1rem; font-weight:600; color:var(--deep-teal); margin-bottom:6px;}
+  .give-card h3{font-size:1.1rem; color:var(--deep-teal); font-weight:600; margin-bottom:10px;}
+  .give-card p{font-size:0.92rem; color:#4A5A5E; margin-bottom:20px; flex-grow:1;}
+  .give-card .gc-btn{
+    text-align:center; padding:11px 0; border-radius:4px; font-weight:700; font-size:0.9rem;
+    background:var(--deep-teal); color:#fff; transition:background 0.15s ease;
+  }
+  .give-card .gc-btn:hover{background:var(--mid-teal);}
+
+  /* ===== SPONSORSHIP ===== */
+  .sponsor-section{background:var(--deep-teal); padding:90px 28px; color:#fff;}
+  .sponsor-inner{max-width:1120px; margin:0 auto;}
+  .sponsor-section .section-tag{color:var(--azure);}
+  .sponsor-section .section-head h2{color:#fff;}
+  .sponsor-section .section-head p{color:rgba(255,255,255,0.75);}
+
+  .tier-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:24px; margin-top:20px;}
+  @media (max-width:900px){.tier-grid{grid-template-columns:1fr;}}
+
+  .tier-card{
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.16);
+    border-radius:6px;
+    padding:32px 28px;
+    display:flex; flex-direction:column;
+  }
+  .tier-card.top{border-color:var(--azure);}
+  .tier-badge{
+    font-family:'DM Mono',monospace; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.06em;
+    padding:5px 12px; border-radius:20px; display:inline-block; margin-bottom:18px; width:fit-content;
+  }
+  .tier-card.top .tier-badge{background:var(--azure); color:var(--deep-teal);}
+  .tier-card:not(.top) .tier-badge{background:rgba(255,255,255,0.12); color:#fff;}
+  .tier-card h3{font-size:1.45rem; font-weight:600; margin-bottom:4px;}
+  .tier-card .tier-amount{font-family:'DM Mono',monospace; font-size:1.5rem; color:var(--azure); margin-bottom:20px; display:block;}
+  .tier-card ul{list-style:none; margin-bottom:24px; flex-grow:1;}
+  .tier-card li{
+    padding:9px 0; border-top:1px solid rgba(255,255,255,0.1); font-size:0.92rem; color:rgba(255,255,255,0.88);
+    display:flex; align-items:baseline; gap:9px;
+  }
+  .tier-card li:first-of-type{border-top:none;}
+  .tier-card li::before{content:"—"; color:var(--azure); flex-shrink:0;}
+  .tier-cta{
+    display:block; text-align:center; padding:12px 0; border-radius:4px; font-weight:700; font-size:0.9rem;
+    transition:transform 0.15s ease;
+  }
+  .tier-card.top .tier-cta{background:var(--azure); color:var(--deep-teal);}
+  .tier-card:not(.top) .tier-cta{background:transparent; border:1.5px solid rgba(255,255,255,0.4); color:#fff;}
+  .tier-cta:hover{transform:translateY(-2px);}
+
+  /* ===== WHY GIVE ===== */
+  .why-section{background:#F2EEE3; padding:90px 28px;}
+  .why-inner{max-width:1120px; margin:0 auto;}
+  .why-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:36px; margin-top:48px;}
+  @media (max-width:760px){.why-grid{grid-template-columns:1fr;}}
+  .why-card h3{font-size:1.3rem; color:var(--deep-teal); margin-bottom:10px; font-weight:600;}
+  .why-card p{color:#4A5A5E; font-size:0.97rem;}
+
+  /* ===== FINAL CTA ===== */
+  .cta-section{background:var(--azure); padding:80px 28px;}
+  .cta-inner{max-width:880px; margin:0 auto; text-align:center;}
+  .cta-inner .section-tag{color:var(--mid-teal); justify-self:center;}
+  .cta-inner h2{font-size:clamp(1.8rem,3.4vw,2.6rem); color:var(--deep-teal); margin-bottom:16px; font-weight:600;}
+  .cta-inner p.lead{color:#1A3340; font-size:1.05rem; margin-bottom:36px; max-width:540px; margin-left:auto; margin-right:auto;}
+  .cta-actions{display:flex; gap:16px; justify-content:center; flex-wrap:wrap;}
+  .cta-actions .btn-primary{background:var(--deep-teal); color:#fff;}
+  .cta-actions .btn-primary:hover{background:var(--mid-teal);}
+  .cta-actions .btn-ghost{border-color:var(--deep-teal); color:var(--deep-teal);}
+  .cta-actions .btn-ghost:hover{background:rgba(13,43,54,0.06);}
+
+  /* ===== FOOTER ===== */
+  footer{background:var(--deep-teal); color:rgba(255,255,255,0.7); padding:48px 28px 36px;}
+  .footer-inner{max-width:1120px; margin:0 auto; display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:24px;}
+  .footer-inner .org{color:var(--azure); font-family:'Fraunces',serif; font-weight:600; font-size:1.1rem; margin-bottom:8px;}
+  .footer-meta{font-size:0.85rem; line-height:1.7;}
+  .footer-right{font-size:0.8rem; text-align:right;}
+
+</style>
+  <link rel="stylesheet" href="nav.css">
+</head>
+<body>
+
+<nav id="wct-nav">
+  <div class="wct-nav-inner">
+    <a href="index.html" class="wct-nav-logo">
+      <span class="wct-logo-main">World Cultural Tour 2027</span>
+      <span class="wct-logo-sub">The Humble Travelers Foundation &middot; Portland</span>
+    </a>
+    <ul class="wct-nav-links">
+      <li><a href="index.html" >Event</a></li>
+      <li><a href="get-involved.html" >Get Involved</a></li>
+      <li><a href="donate.html" class="wct-active">Give &amp; Sponsor</a></li>
+      <li><a href="partners.html" >Cultural Partners</a></li>
+      <li><a href="volunteer.html" >Volunteer</a></li>
+      <li><a href="vendors.html" >Vendors</a></li>
+    </ul>
+    <a href="get-involved.html" class="wct-nav-cta">Get Involved</a>
+    <button class="wct-hamburger" aria-label="Toggle menu" onclick="document.getElementById('wct-nav').classList.toggle('wct-nav-open')">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <ul class="wct-mobile-menu">
+    <li><a href="index.html" >Event</a></li>
+    <li><a href="get-involved.html" >Get Involved</a></li>
+    <li><a href="donate.html" class="wct-active">Give &amp; Sponsor</a></li>
+    <li><a href="partners.html" >Cultural Partners</a></li>
+    <li><a href="volunteer.html" >Volunteer</a></li>
+    <li><a href="vendors.html" >Vendors</a></li>
+    <li><a href="get-involved.html" class="wct-mobile-cta">Get Involved</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">Give & Sponsor · Cathedral Park, Portland</span>
+    <h1>Help us raise <em>$45,000</em> to bring the world to Portland.</h1>
+    <p class="lead">The World Cultural Tour 2027 is free for every attendee — three days celebrating 15 to 25 cultures at Cathedral Park this September. Your gift or sponsorship makes that possible.</p>
+    <div class="hero-actions">
+      <a href="https://collect.crowded.me/collection/73b2a614-7ba4-40a7-8ac9-d948060fa386" class="btn-primary" target="_blank" rel="noopener">Donate Now</a>
+      <a href="#sponsor" class="btn-ghost">Explore Sponsorship</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><span class="num">$45,000</span><span class="lbl">Fundraising goal</span></div>
+      <div class="hero-stat"><span class="num">15–25</span><span class="lbl">Cultural partners</span></div>
+      <div class="hero-stat"><span class="num">300–500</span><span class="lbl">Students reached</span></div>
+      <div class="hero-stat"><span class="num">100%</span><span class="lbl">Volunteer-run</span></div>
+    </div>
+  </div>
+</header>
+
+<section class="progress-section">
+  <div class="progress-card">
+    <div class="progress-top">
+      <span class="pg-label">Campaign Progress</span>
+      <span class="pg-goal">Goal: $45,000</span>
+    </div>
+    <div class="progress-track"><div class="progress-fill" style="width:32%;"></div></div>
+    <p class="progress-note">Every gift and sponsorship brings us closer to a free festival for the whole city. Track our progress and give directly through Crowded, our secure donation platform.</p>
+  </div>
+</section>
+
+<div class="paths-nav">
+  <a href="#give" class="path-link">
+    <div class="pl-text">
+      <span class="pl-tag">For Individuals</span>
+      <h3>Make a Gift</h3>
+    </div>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+  </a>
+  <a href="#sponsor" class="path-link">
+    <div class="pl-text">
+      <span class="pl-tag">For Businesses & Organizations</span>
+      <h3>Become a Sponsor</h3>
+    </div>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+  </a>
+</div>
+
+<section class="give-section" id="give">
+  <div class="section-head">
+    <span class="section-tag">Individual Giving</span>
+    <h2>Every gift moves us toward $45,000.</h2>
+    <p>One-time or recurring, every contribution helps keep the festival free for Portland families. Give securely online through Crowded.</p>
+  </div>
+
+  <div class="give-grid">
+    <div class="give-card">
+      <span class="gc-tag">Traveler</span>
+      <div class="gc-amount">$25</div>
+      <h3>Get the journey started</h3>
+      <p>Covers printed materials and translation support for non-English-speaking attendees.</p>
+      <a href="https://collect.crowded.me/collection/73b2a614-7ba4-40a7-8ac9-d948060fa386" class="gc-btn" target="_blank" rel="noopener">Give $25</a>
+    </div>
+    <div class="give-card">
+      <span class="gc-tag">Explorer</span>
+      <div class="gc-amount">$100</div>
+      <h3>Support a cultural partner</h3>
+      <p>Helps offset booth materials and supplies for a participating cultural organization.</p>
+      <a href="https://collect.crowded.me/collection/73b2a614-7ba4-40a7-8ac9-d948060fa386" class="gc-btn" target="_blank" rel="noopener">Give $100</a>
+    </div>
+    <div class="give-card featured">
+      <span class="gc-tag">Navigator</span>
+      <div class="gc-amount">$250</div>
+      <h3>Send a classroom on Field Trip Day</h3>
+      <p>Helps cover transportation for a school group attending Field Trip Day.</p>
+      <a href="https://collect.crowded.me/collection/73b2a614-7ba4-40a7-8ac9-d948060fa386" class="gc-btn" target="_blank" rel="noopener">Give $250</a>
+    </div>
+    <div class="give-card">
+      <span class="gc-tag">Founding Traveler</span>
+      <div class="gc-amount">$500+</div>
+      <h3>Become a founding supporter</h3>
+      <p>Named recognition as a founding supporter of the World Cultural Tour 2027.</p>
+      <a href="https://collect.crowded.me/collection/73b2a614-7ba4-40a7-8ac9-d948060fa386" class="gc-btn" target="_blank" rel="noopener">Give $500+</a>
+    </div>
+  </div>
+</section>
+
+<section class="sponsor-section" id="sponsor">
+  <div class="sponsor-inner">
+    <div class="section-head">
+      <span class="section-tag">Sponsorship</span>
+      <h2>Put your brand behind 15+ cultures this September.</h2>
+      <p>The World Cultural Tour 2027 draws thousands to Cathedral Park for a free three-day celebration. Sponsorship puts your organization at the center of it.</p>
+    </div>
+
+    <div class="tier-grid">
+      <div class="tier-card top">
+        <span class="tier-badge">Top Tier</span>
+        <h3>Presenting Sponsor</h3>
+        <span class="tier-amount">$15,000</span>
+        <ul>
+          <li>Top logo placement across all event materials</li>
+          <li>Stage naming rights</li>
+          <li>VIP event access</li>
+          <li>Dedicated social media features</li>
+          <li>Recognition at opening ceremony</li>
+        </ul>
+        <a href="mailto:info@humbletravelers.org?subject=Presenting%20Sponsor%20Inquiry%20-%20WCT%202027" class="tier-cta">Inquire About This Tier</a>
+      </div>
+      <div class="tier-card">
+        <span class="tier-badge">Mid Tier</span>
+        <h3>Community Sponsor</h3>
+        <span class="tier-amount">$7,500</span>
+        <ul>
+          <li>Logo on signage & printed program</li>
+          <li>Booth space at the festival</li>
+          <li>Social media mentions</li>
+          <li>Event day recognition</li>
+        </ul>
+        <a href="mailto:info@humbletravelers.org?subject=Community%20Sponsor%20Inquiry%20-%20WCT%202027" class="tier-cta">Inquire About This Tier</a>
+      </div>
+      <div class="tier-card">
+        <span class="tier-badge">Field Trip Tier</span>
+        <h3>Field Trip Sponsor</h3>
+        <span class="tier-amount">$5,000</span>
+        <ul>
+          <li>Named sponsor of Field Trip Day</li>
+          <li>Recognition to schools & families</li>
+          <li>Logo on student materials</li>
+          <li>Social media feature</li>
+        </ul>
+        <a href="mailto:info@humbletravelers.org?subject=Field%20Trip%20Sponsor%20Inquiry%20-%20WCT%202027" class="tier-cta">Inquire About This Tier</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why-section">
+  <div class="why-inner">
+    <div class="section-head">
+      <span class="section-tag">Why It Matters</span>
+      <h2>Free, because of the people who give.</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <h3>Free for every attendee</h3>
+        <p>No ticket price means every Portland family can attend, regardless of income.</p>
+      </div>
+      <div class="why-card">
+        <h3>A platform for culture</h3>
+        <p>Your gift directly supports 15–25 cultural partner organizations sharing their traditions.</p>
+      </div>
+      <div class="why-card">
+        <h3>100% community-powered</h3>
+        <p>HTF is an all-volunteer 501(c)(3) nonprofit — your donation goes straight to the event.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="cta-inner">
+    <span class="section-tag
