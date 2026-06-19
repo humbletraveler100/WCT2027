@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cultural Partners — World Cultural Tour Portland 2027</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap');
+
+  :root{
+    --deep-teal:#0D2B36;
+    --mid-teal:#055368;
+    --teal-bright:#0B7A93;
+    --mint:#C9EEDD;
+    --mint-deep:#8FD9BC;
+    --cream:#FBF8F3;
+    --ink:#10262E;
+    --line:#D9CDB8;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Plus Jakarta Sans', sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    line-height:1.5;
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important; transition-duration:0.01ms !important;}
+  }
+
+  h1,h2,h3{font-family:'Fraunces', serif; letter-spacing:-0.01em;}
+  a{color:inherit;}
+  .mono{font-family:'DM Mono', monospace; letter-spacing:0.02em;}
+
+  /* ===== NAV ===== */
+
+  /* ===== HERO ===== */
+  .hero{
+    background:linear-gradient(165deg, var(--deep-teal) 0%, var(--mid-teal) 65%, var(--teal-bright) 100%);
+    color:#fff;
+    padding:90px 28px 110px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute; right:-120px; top:-120px;
+    width:420px; height:420px; border-radius:50%;
+    background:radial-gradient(circle, rgba(201,238,221,0.22) 0%, rgba(201,238,221,0) 70%);
+  }
+  .hero-inner{max-width:1120px; margin:0 auto; position:relative; z-index:2;}
+  .eyebrow{
+    font-family:'DM Mono',monospace; text-transform:uppercase; letter-spacing:0.12em;
+    font-size:0.78rem; color:var(--mint); margin-bottom:22px; display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow::before{content:""; width:28px; height:1px; background:var(--mint); display:inline-block;}
+  .hero h1{
+    font-size:clamp(2.4rem, 5vw, 4.1rem);
+    font-weight:600; line-height:1.06; max-width:780px;
+    margin-bottom:26px;
+  }
+  .hero h1 em{color:var(--mint); font-style:normal;}
+  .hero p.lead{
+    font-size:1.18rem; max-width:600px; color:rgba(255,255,255,0.88); margin-bottom:40px; font-weight:400;
+  }
+  .hero-actions{display:flex; gap:16px; flex-wrap:wrap; margin-bottom:54px;}
+  .btn-primary{
+    background:var(--mint); color:var(--deep-teal); font-weight:700; padding:15px 30px;
+    border-radius:3px; text-decoration:none; font-size:1rem; display:inline-block;
+    transition:transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .btn-primary:hover{transform:translateY(-2px); box-shadow:0 10px 24px rgba(0,0,0,0.22);}
+  .btn-ghost{
+    border:1.5px solid rgba(255,255,255,0.5); color:#fff; font-weight:600; padding:14px 28px;
+    border-radius:3px; text-decoration:none; font-size:1rem; display:inline-block;
+    transition:background 0.15s ease, border-color 0.15s ease;
+  }
+  .btn-ghost:hover{background:rgba(255,255,255,0.1); border-color:#fff;}
+
+  .hero-stats{
+    display:flex; gap:0; flex-wrap:wrap;
+    border-top:1px solid rgba(255,255,255,0.18); padding-top:28px;
+  }
+  .hero-stat{padding-right:42px; margin-right:42px; border-right:1px solid rgba(255,255,255,0.18);}
+  .hero-stat:last-child{border-right:none;}
+  .hero-stat .num{font-family:'Fraunces',serif; font-size:2rem; font-weight:600; color:var(--mint); display:block;}
+  .hero-stat .lbl{font-size:0.8rem; color:rgba(255,255,255,0.7); margin-top:2px;}
+
+  /* ===== TIMELINE BAND ===== */
+  .timeline-section{padding:80px 28px 60px; max-width:1120px; margin:0 auto;}
+  .section-head{margin-bottom:48px; max-width:680px;}
+  .section-tag{font-family:'DM Mono',monospace; font-size:0.78rem; color:var(--mid-teal); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:12px; display:block;}
+  .section-head h2{font-size:clamp(1.7rem,3vw,2.4rem); color:var(--deep-teal); font-weight:600; line-height:1.15;}
+  .section-head p{margin-top:14px; color:#4A5A5E; font-size:1.05rem; max-width:560px;}
+
+  .timeline{
+    position:relative;
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:0;
+    border-top:2px solid var(--line);
+    border-bottom:2px solid var(--line);
+  }
+  .tl-stop{
+    padding:32px 28px; position:relative; border-right:1px solid var(--line);
+  }
+  .tl-stop:last-child{border-right:none;}
+  .tl-stop.active{background:var(--mint);}
+  .tl-date{font-family:'DM Mono',monospace; font-size:0.85rem; color:var(--mid-teal); font-weight:500; margin-bottom:10px; display:block;}
+  .tl-stop.active .tl-date{color:var(--deep-teal);}
+  .tl-stop h3{font-size:1.25rem; color:var(--deep-teal); margin-bottom:8px; font-weight:600;}
+  .tl-stop p{font-size:0.94rem; color:#4A5A5E;}
+  .tl-stop.active p{color:#1A3E2E;}
+  .tl-dot{
+    position:absolute; top:-2px; left:28px; width:9px; height:9px; border-radius:50%;
+    background:var(--mid-teal); transform:translateY(-50%);
+  }
+  .tl-stop.active .tl-dot{background:var(--deep-teal);}
+
+  @media (max-width:760px){
+    .timeline{grid-template-columns:1fr;}
+    .tl-stop{border-right:none; border-bottom:1px solid var(--line);}
+    .tl-stop:last-child{border-bottom:none;}
+  }
+
+  /* ===== FEE BAND ===== */
+  .fee-section{background:var(--deep-teal); padding:90px 28px; color:#fff;}
+  .fee-inner{max-width:1120px; margin:0 auto;}
+  .fee-section .section-tag{color:var(--mint);}
+  .fee-section .section-head h2{color:#fff;}
+  .fee-section .section-head p{color:rgba(255,255,255,0.75);}
+
+  .fee-card{
+    background:rgba(255,255,255,0.04);
+    border:1px solid var(--mint);
+    border-radius:8px;
+    padding:40px;
+    display:flex; align-items:center; justify-content:space-between; gap:40px;
+    flex-wrap:wrap;
+    margin-top:24px;
+  }
+  .fee-card .fc-label{font-family:'DM Mono',monospace; font-size:0.78rem; color:rgba(255,255,255,0.6); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:10px; display:block;}
+  .fee-card .fc-amount{font-family:'Fraunces',serif; font-size:3rem; font-weight:600; color:var(--mint);}
+  .fee-card .fc-amount span{font-size:1.3rem; opacity:0.7; font-weight:400;}
+  .fee-card .fc-note{max-width:420px; color:rgba(255,255,255,0.78); font-size:0.98rem;}
+
+  .two-col{display:grid; grid-template-columns:1fr 1fr; gap:28px; margin-top:36px;}
+  @media (max-width:760px){.two-col{grid-template-columns:1fr;}}
+  .info-card{
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.14);
+    border-radius:6px;
+    padding:32px 30px;
+  }
+  .info-card .ic-badge{
+    font-family:'DM Mono',monospace; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.08em;
+    padding:5px 12px; border-radius:20px; display:inline-block; margin-bottom:18px;
+    background:rgba(255,255,255,0.12); color:#fff;
+  }
+  .info-card h3{font-size:1.35rem; font-weight:600; margin-bottom:16px;}
+  .info-card ul{list-style:none;}
+  .info-card li{
+    padding:10px 0; border-top:1px solid rgba(255,255,255,0.1); font-size:0.95rem; color:rgba(255,255,255,0.9);
+    display:flex; align-items:baseline; gap:10px;
+  }
+  .info-card li:first-of-type{border-top:none;}
+  .info-card li::before{content:"—"; color:var(--mint); flex-shrink:0;}
+
+  /* ===== HOW IT WORKS ===== */
+  .how-section{padding:90px 28px; max-width:1120px; margin:0 auto;}
+  .how-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:28px; margin-top:48px;}
+  @media (max-width:900px){.how-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:560px){.how-grid{grid-template-columns:1fr;}}
+  .how-card{padding-top:22px; border-top:2px solid var(--mint-deep);}
+  .how-card .how-num{font-family:'DM Mono',monospace; color:var(--mid-teal); font-size:0.85rem; margin-bottom:12px; display:block;}
+  .how-card h3{font-size:1.15rem; color:var(--deep-teal); margin-bottom:8px; font-weight:600;}
+  .how-card p{color:#4A5A5E; font-size:0.92rem;}
+
+  /* ===== WHY SECTION ===== */
+  .why-section{background:#F2EEE3; padding:90px 28px;}
+  .why-inner{max-width:1120px; margin:0 auto;}
+  .why-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:36px; margin-top:48px;}
+  @media (max-width:760px){.why-grid{grid-template-columns:1fr;}}
+  .why-card h3{font-size:1.3rem; color:var(--deep-teal); margin-bottom:10px; font-weight:600;}
+  .why-card p{color:#4A5A5E; font-size:0.97rem;}
+
+  /* ===== INTEREST FORM ===== */
+  .form-section{background:var(--mint); padding:90px 28px;}
+  .form-inner{max-width:760px; margin:0 auto; text-align:center;}
+  .form-inner .section-tag{color:var(--mid-teal); justify-self:center;}
+  .form-inner h2{font-size:clamp(1.8rem,3.4vw,2.6rem); color:var(--deep-teal); margin-bottom:16px; font-weight:600;}
+  .form-inner p.lead{color:#1A3E2E; font-size:1.05rem; margin-bottom:40px; max-width:540px; margin-left:auto; margin-right:auto;}
+
+  .signup-form{
+    background:#fff; border-radius:8px; padding:40px;
+    box-shadow:0 18px 50px rgba(13,43,54,0.14);
+    text-align:left;
+  }
+  .form-row{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-bottom:18px;}
+  @media (max-width:560px){.form-row{grid-template-columns:1fr;}}
+  .form-field label{display:block; font-size:0.82rem; font-weight:600; color:var(--deep-teal); margin-bottom:6px;}
+  .form-field input, .form-field select, .form-field textarea{
+    width:100%; padding:12px 14px; border:1.5px solid #DDD6C9; border-radius:4px;
+    font-family:'Plus Jakarta Sans',sans-serif; font-size:0.95rem; color:var(--ink); background:#FBFAF7;
+  }
+  .form-field textarea{resize:vertical; min-height:80px;}
+  .form-field input:focus, .form-field select:focus, .form-field textarea:focus{outline:2px solid var(--mid-teal); outline-offset:1px; border-color:var(--mid-teal);}
+  .interest-choice{margin-bottom:24px;}
+  .interest-choice > label{display:block; font-size:0.82rem; font-weight:600; color:var(--deep-teal); margin-bottom:10px;}
+  .radio-options{display:flex; gap:14px; flex-wrap:wrap;}
+  .radio-option{
+    border:1.5px solid #DDD6C9; border-radius:4px; padding:12px 18px; cursor:pointer; flex:1; min-width:160px;
+    display:flex; align-items:center; gap:10px; font-size:0.92rem; transition:border-color 0.15s ease;
+  }
+  .radio-option:hover{border-color:var(--mid-teal);}
+  .radio-option input{accent-color:var(--mid-teal); width:16px; height:16px;}
+  .submit-btn{
+    width:100%; background:var(--deep-teal); color:#fff; font-weight:700; padding:16px 0;
+    border:none; border-radius:4px; font-size:1rem; cursor:pointer; font-family:'Plus Jakarta Sans',sans-serif;
+    transition:background 0.15s ease;
+  }
+  .submit-btn:hover{background:var(--mid-teal);}
+  .form-note{font-size:0.82rem; color:#3E5C4E; margin-top:16px; text-align:center;}
+
+  /* ===== FOOTER ===== */
+  footer{background:var(--deep-teal); color:rgba(255,255,255,0.7); padding:48px 28px 36px;}
+  .footer-inner{max-width:1120px; margin:0 auto; display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:24px;}
+  .footer-inner .org{color:var(--mint); font-family:'Fraunces',serif; font-weight:600; font-size:1.1rem; margin-bottom:8px;}
+  .footer-meta{font-size:0.85rem; line-height:1.7;}
+  .footer-right{font-size:0.8rem; text-align:right;}
+
+</style>
+  <link rel="stylesheet" href="nav.css">
+</head>
+<body>
+
+<nav id="wct-nav">
+  <div class="wct-nav-inner">
+    <a href="index.html" class="wct-nav-logo">
+      <span class="wct-logo-main">World Cultural Tour 2027</span>
+      <span class="wct-logo-sub">The Humble Travelers Foundation &middot; Portland</span>
+    </a>
+    <ul class="wct-nav-links">
+      <li><a href="index.html" >Event</a></li>
+      <li><a href="get-involved.html" >Get Involved</a></li>
+      <li><a href="donate.html" >Give &amp; Sponsor</a></li>
+      <li><a href="partners.html" class="wct-active">Cultural Partners</a></li>
+      <li><a href="volunteer.html" >Volunteer</a></li>
+      <li><a href="vendors.html" >Vendors</a></li>
+    </ul>
+    <a href="get-involved.html" class="wct-nav-cta">Get Involved</a>
+    <button class="wct-hamburger" aria-label="Toggle menu" onclick="document.getElementById('wct-nav').classList.toggle('wct-nav-open')">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <ul class="wct-mobile-menu">
+    <li><a href="index.html" >Event</a></li>
+    <li><a href="get-involved.html" >Get Involved</a></li>
+    <li><a href="donate.html" >Give &amp; Sponsor</a></li>
+    <li><a href="partners.html" class="wct-active">Cultural Partners</a></li>
+    <li><a href="volunteer.html" >Volunteer</a></li>
+    <li><a href="vendors.html" >Vendors</a></li>
+    <li><a href="get-involved.html" class="wct-mobile-cta">Get Involved</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">Cultural Partner Recruitment · Cathedral Park, Portland</span>
+    <h1>Share your culture with <em>thousands</em> of Portlanders.</h1>
+    <p class="lead">The World Cultural Tour 2027 is built around 15 to 25 cultural partner organizations like yours — a free, three-day platform to share food, art, music, and tradition with the whole city.</p>
+    <div class="hero-actions">
+      <a href="#apply" class="btn-primary">Apply as a Cultural Partner</a>
+      <a href="#details" class="btn-ghost">See How It Works</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><span class="num">3</span><span class="lbl">Festival days</span></div>
+      <div class="hero-stat"><span class="num">15–25</span><span class="lbl">Partner spots</span></div>
+      <div class="hero-stat"><span class="num">300–500</span><span class="lbl">Students, Field Trip Day</span></div>
+      <div class="hero-stat"><span class="num">$0–$50</span><span class="lbl">Participation fee</span></div>
+    </div>
+  </div>
+</header>
+
+<section class="timeline-section" id="details">
+  <div class="section-head">
+    <span class="section-tag">How Applications Work</span>
+    <h2>You can apply today. Booth assignments lock in this summer.</h2>
+    <p>We review applications on a rolling basis to give every partner organization time to plan.</p>
+  </div>
+  <div class="timeline">
+    <div class="tl-stop active">
+      <div class="tl-dot"></div>
+      <span class="tl-date">Now</span>
+      <h3>Applications Open</h3>
+      <p>Tell us about your organization and what you'd like to share. Rolling review, no deadline pressure.</p>
+    </div>
+    <div class="tl-stop">
+      <div class="tl-dot"></div>
+      <span class="tl-date">Summer 2027</span>
+      <h3>Confirmation & Planning</h3>
+      <p>Booth assignments confirmed, Cultural Passport logistics finalized, one planning check-in scheduled.</p>
+    </div>
+    <div class="tl-stop">
+      <div class="tl-dot"></div>
+      <span class="tl-date">September 2027</span>
+      <h3>Event Week</h3>
+      <p>Three days at Cathedral Park, including a Field Trip Day reaching 300–500 Portland students.</p>
+    </div>
+  </div>
+</section>
+
+<section class="fee-section">
+  <div class="fee-inner">
+    <div class="section-head">
+      <span class="section-tag">A Platform, Not a Marketplace</span>
+      <h2>Built for community organizations — not commercial vendors.</h2>
+      <p>Cultural partners pay a nominal fee, not a vendor rate. This isn't about profit; it's about sharing your culture.</p>
+    </div>
+
+    <div class="fee-card">
+      <div>
+        <span class="fc-label">Participation Fee</span>
+        <div class="fc-amount">$0–$50</div>
+      </div>
+      <p class="fc-note">Covers basic booth materials and event insurance. Fee waivers are available — no organization is turned away for cost.</p>
+    </div>
+
+    <div class="two-col">
+      <div class="info-card">
+        <span class="ic-badge">What We Provide</span>
+        <h3>Partner Support</h3>
+        <ul>
+          <li>Booth space & basic setup</li>
+          <li>Promotion across HTF channels</li>
+          <li>Equitable traffic via the Cultural Passport System</li>
+          <li>Volunteer support during your shift</li>
+          <li>Inclusion in Field Trip Day programming</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <span class="ic-badge">What We Ask</span>
+        <h3>Partner Commitment</h3>
+        <ul>
+          <li>Staff your booth across event days</li>
+          <li>Share an authentic cultural activity, food, craft, or performance</li>
+          <li>Sign our brief partner agreement</li>
+          <li>Join one planning check-in before September</li>
+          <li>Welcome visitors of all backgrounds warmly</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="how-section">
+  <div class="section-head">
+    <span class="section-tag">The Cultural Passport System</span>
+    <h2>Every partner gets fair, balanced visitor traffic.</h2>
+    <p>Attendees collect stamps as they visit booths, which naturally spreads foot traffic evenly across all 15–25 partners — no booth left empty, none overwhelmed.</p>
+  </div>
+  <div class="how-grid">
+    <div class="how-card">
+      <span class="how-num">Step 1</span>
+      <h3>Attendees get a passport</h3>
+      <p>Every visitor receives a Cultural Passport at the entrance, free of charge.</p>
+    </div>
+    <div class="how-card">
+      <span class="how-num">Step 2</span>
+      <h3>They visit your booth</h3>
+      <p>Each cultural partner offers a stamp, activity, or taste that represents their tradition.</p>
+    </div>
+    <div class="how-card">
+      <span class="how-num">Step 3</span>
+      <h3>Traffic balances naturally</h3>
+      <p>The passport encourages visitors to explore every booth, not just the most visible ones.</p>
+    </div>
+    <div class="how-card">
+      <span class="how-num">Step 4</span>
+      <h3>Everyone is seen</h3>
+      <p>Smaller and larger organizations alike get meaningful, comparable engagement.</p>
+    </div>
+  </div>
+</section>
+
+<section class="why-section">
+  <div class="why-inner">
+    <div class="section-head">
+      <span class="section-tag">Why Partner With Us</span>
+      <h2>This festival exists because of organizations like yours.</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <h3>A citywide stage</h3>
+        <p>Reach thousands of Portlanders who came specifically to learn about cultures and traditions like yours.</p>
+      </div>
+      <div class="why-card">
+        <h3>Reach the next generation</h3>
+        <p>Field Trip Day puts your culture directly in front of hundreds of local students in a dedicated program.</p>
+      </div>
+      <div class="why-card">
+        <h3>Community, not competition</h3>
+        <p>The Cultural Passport System means you're not competing for visibility — every partner is set up to succeed.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="form-section" id="apply">
+  <div class="form-inner">
+    <span class="section-tag">Apply as a Cultural Partner</span>
+    <h2>Tell us about your organization.</h2>
+    <p class="lead">Applications are reviewed on a rolling basis. We'll follow up within two weeks to talk through booth details.</p>
+
+    <form class="signup-form" onsubmit="event.preventDefault(); this.querySelector('.submit-btn').textContent='Application received! 🌍';">
+      <div class="form-row">
+        <div class="form-field">
+          <label for="org">Organization name</label>
+          <input type="text" id="org" required>
+        </div>
+        <div class="form-field">
+          <label for="contact">Contact name</label>
+          <input type="text" id="contact" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-field">
+          <label for="email">Email</label>
+          <input type="email" id="email" required>
+        </div>
+        <div class="form-field">
+          <label for="phone">Phone (optional)</label>
+          <input type="tel" id="phone">
+        </div>
+      </div>
+
+      <div class="interest-choice">
+        <label>What will you share at your booth?</label>
+        <div class="radio-options">
+          <label class="radio-option"><inpu
